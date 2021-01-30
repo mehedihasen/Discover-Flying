@@ -54,8 +54,8 @@
                     <input class="inp-style inp-width" type="text" value="0" name="" id="business-input">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <button> <span onclick="ticketHandal('business', true)">+</span>
-                        <span onclick="ticketHandal('business', false)">-</span></button>
+                    <p> <span onclick="ticketHandal('business', true)">+</span>
+                        <span onclick="ticketHandal('business', false)">-</span>
                     </p>
                 </div>
             </div>
@@ -137,21 +137,21 @@
             function ticketHandal(category, isticket) {
 
                 const ticketCount = document.getElementById(category + '-input');
-                const ticketCountIn = parseInt(trictCount.value);
+                const ticketCountIn = parseInt(ticketCount.value);
                 let ticketNewCount = ticketCountIn;
                 if (isticket == true && category == 'economy') {
                     ticketNewCount = ticketCountIn + 1 * 100;
                 }
                 if (isticket == true && category == 'business') {
-                    ticketNewCount = trictCountIn + 1 * 150;
+                    ticketNewCount = ticketCountIn + 1 * 150;
                 }
                 if (isticket == false && ticketNewCount > 0 && category == 'business') {
 
-                    ticketNewCount = trictCountIn - 1 * 150;
+                    ticketNewCount = ticketCountIn - 1 * 150;
                 }
 
                 if (isticket == false && ticketNewCount > 0 && category == 'economy') {
-                    ticketNewCount = trictCountIn - 1 * 100;
+                    ticketNewCount = ticketCountIn - 1 * 100;
                 }
                 document.getElementById(category + '-input').value =ticketNewCount;
                 subtotal();
@@ -161,15 +161,11 @@
 
             function subtotal() {
                 const businessPrice = document.getElementById('business-input')
-                const businessPriceIn = parseInt(businessprice.value);
+                const businessPriceIn = parseInt(businessPrice.value);
                 
 
                 const economyPrice = document.getElementById('economy-input')
                 const economyPriceIn = parseInt(economyPrice.value);
-                
-
-             
-               
                const subTotalPrice =  businessPriceIn  + economyPriceIn;
                 const vat = subTotalPrice * 0.1;
                 document.getElementById("tax").innerText = vat;
