@@ -54,8 +54,8 @@
                     <input class="inp-style inp-width" type="text" value="0" name="" id="business-input">
                 </div>
                 <div class="plus-minus-btn">
-                    <p><span onclick="ticketHandal('business', true)">+</span>
-                        <span onclick="ticketHandal('business', false)">-</span>
+                    <p> <button> <span onclick="ticketHandal('business', true)">+</span>
+                        <span onclick="ticketHandal('business', false)">-</span></button>
                     </p>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p id="cheng">$500</p>
+                        <p> $ <span id="cheng">500</span></p>
                     </div>
                 </div>
 
@@ -153,7 +153,7 @@
                 if (isticket == false && ticketNewCount > 0 && category == 'economy') {
                     ticketNewCount = trictCountIn - 1 * 100;
                 }
-                document.getElementById(category + '-input').value = ticketNewCount;
+                document.getElementById(category + '-input').value =ticketNewCount;
                 subtotal();
             }
 
@@ -168,8 +168,9 @@
                 const economyPriceIn = parseInt(economyPrice.value);
                 
 
-                const subTotalPrice = businessPriceIn  + economyPriceIn;
-
+             
+               
+               const subTotalPrice =  businessPriceIn  + economyPriceIn;
                 const vat = subTotalPrice * 0.1;
                 document.getElementById("tax").innerText = vat;
 
